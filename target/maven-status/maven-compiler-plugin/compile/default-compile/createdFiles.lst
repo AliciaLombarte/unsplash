@@ -3,6 +3,7 @@ com/test/testdesarrolladores/config/UriConfig.class
 com/test/testdesarrolladores/controllers/CollectionController.class
 com/test/testdesarrolladores/services/impl/CollectionServiceImpl.class
 com/test/testdesarrolladores/services/CollectionService.class
+com/test/testdesarrolladores/controllers/HealthCheckController.class
 com/test/testdesarrolladores/services/impl/CollectionServiceImpl$1.class
 com/test/testdesarrolladores/dto/FilteredCollection.class
 com/test/testdesarrolladores/services/impl/CollectionServiceImpl$2.class

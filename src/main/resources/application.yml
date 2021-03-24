@@ -1,11 +1,16 @@
-user:
-  username: "vivelibre"
-  password: "v1v3l1br3"
+app_user:
   access_token: "OhVC9vCfusUTjV1fVu4prRvfh8rWGl4eYmlqrRZvLwM"
   token_type: "Bearer"
   refresh_token: "Jmodt8GzjeuNk_dfWHaeARrwbHKN934h5_IT-OAHNuQ"
   scope: "public"
   created_at: 1616545033
+
+user:
+  access_token: "jCXalDt5G8Nr7sZhnXCxwrhCyaw7WroHNC1UfSYxlN8"
+  token_type: "Bearer"
+  refresh_token: "-QCBRlBDjlVD_udvMidpp6AP7g-4d2OCySA-94j0uqs"
+  scope: "public read_user write_user read_photos write_photos write_likes write_followers read_collections write_collections"
+  created_at: 1616573941
 
 uri:
   getCollection: "https://api.unsplash.com/collections?"
