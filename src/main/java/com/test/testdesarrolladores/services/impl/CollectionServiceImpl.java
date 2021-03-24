@@ -32,14 +32,14 @@ public class CollectionServiceImpl implements CollectionService {
     HttpClient httpClient;
 
     @Override
-    public List<FilteredCollection> getNonFilteredCollection() throws IOException, InterruptedException {
-        HttpResponse<String> response = this.getCollection();
+    public List<FilteredCollection> getNonFilteredCollection(String accessToken, String page, String size) throws IOException, InterruptedException {
+        HttpResponse<String> response = this.getCollection(accessToken, page, size);
         return this.parseApiResponseBody(response.body());
     }
 
     @Override
-    public List<FilteredCollection> getAndFilterCollection(String filterToApply) throws InterruptedException, IOException {
-        HttpResponse<String> response = this.getCollection();
+    public List<FilteredCollection> getAndFilterCollection(String accessToken, String filterToApply, String page, String size) throws InterruptedException, IOException {
+        HttpResponse<String> response = this.getCollection(accessToken, page, size);
         return this.parseApiResponseBody(response.body())
                 .stream()
                 .map(given -> this.filterCollection(given, filterToApply))
@@ -63,9 +63,14 @@ public class CollectionServiceImpl implements CollectionService {
                 .anyMatch(given -> given.toLowerCase().contains(filterToApply)) ? collection : null;
     }
 
-    private HttpResponse<String> getCollection() throws InterruptedException, IOException {
+    private HttpResponse<String> getCollection(String accessToken, String page, String size) throws InterruptedException, IOException {
+        String token = accessToken.isBlank() ? userConfig.getUserAccessToken() : accessToken;
+
         Map<String, String> parameters = new HashMap<>();
-        parameters.put("access_token", userConfig.getUserAccessToken());
+        parameters.put("access_token", token);
+        parameters.put("page", page);
+        parameters.put("per_page", size);
+
         String form = parameters.keySet().stream()
                 .map(key -> key + "=" + URLEncoder.encode(parameters.get(key), StandardCharsets.UTF_8))
                 .collect(Collectors.joining("&"));

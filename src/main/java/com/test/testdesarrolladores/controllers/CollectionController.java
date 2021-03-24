@@ -24,11 +24,14 @@ public class CollectionController {
 
     @RequestMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
     ResponseEntity<List<FilteredCollection>> getFilteredCollections(
-            @RequestParam(name = "filter", required = false) String filterToApply) throws InterruptedException, NoSuchAlgorithmException, IOException, JSONException {
+            @RequestParam(name = "access_token") String access_token,
+            @RequestParam(name = "filter", required = false) String filterToApply,
+            @RequestParam(value = "page", required = false, defaultValue = "0") String page,
+            @RequestParam(value = "per_page", required = false, defaultValue = "10") String size) throws InterruptedException, NoSuchAlgorithmException, IOException, JSONException {
         if (filterToApply != null) {
-            return ResponseEntity.ok().body(collectionService.getAndFilterCollection(filterToApply.toLowerCase()));
+            return ResponseEntity.ok().body(collectionService.getAndFilterCollection(access_token, filterToApply.toLowerCase(), page, size));
         } else {
-            return ResponseEntity.ok().body(collectionService.getNonFilteredCollection());
+            return ResponseEntity.ok().body(collectionService.getNonFilteredCollection(access_token, page, size));
         }
     }
 
