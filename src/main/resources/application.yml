@@ -1,0 +1,11 @@
+user:
+  username: "vivelibre"
+  password: "v1v3l1br3"
+  access_token: "OhVC9vCfusUTjV1fVu4prRvfh8rWGl4eYmlqrRZvLwM"
+  token_type: "Bearer"
+  refresh_token: "Jmodt8GzjeuNk_dfWHaeARrwbHKN934h5_IT-OAHNuQ"
+  scope: "public"
+  created_at: 1616545033
+
+uri:
+  getCollection: "https://api.unsplash.com/collections?"

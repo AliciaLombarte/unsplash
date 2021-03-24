@@ -1,0 +1,12 @@
+version: "2.2"
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-unsplash
+    image: api-unsplash
+    ports:
+      - "8080:8080"

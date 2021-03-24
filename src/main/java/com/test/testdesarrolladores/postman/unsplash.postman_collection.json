@@ -1,0 +1,133 @@
+{
+  "info": {
+    "_postman_id": "35d670d8-81d8-4716-a64b-bdcbb9590c61",
+    "name": "unsplash",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getFilteredCollections",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}:{{port}}/collections/all",
+          "host": [
+            "{{host}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "collections",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "filter",
+              "value": "ba",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "healthcheck",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}:{{port}}/",
+          "host": [
+            "{{host}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAuthorize",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://unsplash.com/oauth/authorize?client_id={{client_id}}&response_type={{response_type}}&scope={{scope}}&redirect_uri={{redirect_uri}}",
+          "protocol": "https",
+          "host": [
+            "unsplash",
+            "com"
+          ],
+          "path": [
+            "oauth",
+            "authorize"
+          ],
+          "query": [
+            {
+              "key": "client_id",
+              "value": "{{client_id}}"
+            },
+            {
+              "key": "response_type",
+              "value": "{{response_type}}"
+            },
+            {
+              "key": "scope",
+              "value": "{{scope}}"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "{{redirect_uri}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "postToken",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://unsplash.com/oauth/token?client_id={{client_id}}&client_secret={{client_secret}}&redirect_uri={{redirect_uri}}&code&grant_type={{grant_type}}",
+          "protocol": "https",
+          "host": [
+            "unsplash",
+            "com"
+          ],
+          "path": [
+            "oauth",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "client_id",
+              "value": "{{client_id}}"
+            },
+            {
+              "key": "client_secret",
+              "value": "{{client_secret}}"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "{{redirect_uri}}"
+            },
+            {
+              "key": "code",
+              "value": null
+            },
+            {
+              "key": "grant_type",
+              "value": "{{grant_type}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

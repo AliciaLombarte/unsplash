@@ -1,0 +1,9 @@
+version: "2.2"
+
+services:
+
+  app:
+    container_name: api-unsplash
+    image: alicialombarte/api-unsplash
+    ports:
+      - "8080:8080"

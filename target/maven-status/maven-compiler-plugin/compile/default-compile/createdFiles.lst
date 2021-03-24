@@ -1,0 +1,12 @@
+com/test/testdesarrolladores/config/UserConfig.class
+com/test/testdesarrolladores/config/UriConfig.class
+com/test/testdesarrolladores/controllers/CollectionController.class
+com/test/testdesarrolladores/services/impl/CollectionServiceImpl.class
+com/test/testdesarrolladores/services/CollectionService.class
+com/test/testdesarrolladores/services/impl/CollectionServiceImpl$1.class
+com/test/testdesarrolladores/dto/FilteredCollection.class
+com/test/testdesarrolladores/services/impl/CollectionServiceImpl$2.class
+com/test/testdesarrolladores/TestDesarrolladoresApplication.class
+com/test/testdesarrolladores/services/HttpClient.class
+com/test/testdesarrolladores/services/impl/HttpClientImpl.class
+com/test/testdesarrolladores/dto/OauthTokenResponse.class
