@@ -11,7 +11,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{host}}:{{port}}/collections/all",
+          "raw": "{{host}}:{{port}}/collections/all?filter=W&page=50&access_token=",
           "host": [
             "{{host}}"
           ],
@@ -23,8 +23,20 @@
           "query": [
             {
               "key": "filter",
-              "value": "ba",
+              "value": "W"
+            },
+            {
+              "key": "page",
+              "value": "50"
+            },
+            {
+              "key": "per_page",
+              "value": "1",
               "disabled": true
+            },
+            {
+              "key": "access_token",
+              "value": ""
             }
           ]
         }
@@ -123,6 +135,64 @@
             {
               "key": "grant_type",
               "value": "{{grant_type}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "postUserToken",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://unsplash.com/oauth/token?response_type=token&client_id={{client_id}}&username={{user}}&password={{password}}&scope=public&grant_type=authorization_code&code=URFDrZwgjMckBW9fSYKWwxTxKzYwuADMn8M1vhq4exU&client_secret={{client_secret}}&redirect_uri={{redirect_uri}}",
+          "protocol": "https",
+          "host": [
+            "unsplash",
+            "com"
+          ],
+          "path": [
+            "oauth",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "response_type",
+              "value": "token"
+            },
+            {
+              "key": "client_id",
+              "value": "{{client_id}}"
+            },
+            {
+              "key": "username",
+              "value": "{{user}}"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}"
+            },
+            {
+              "key": "scope",
+              "value": "public"
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code"
+            },
+            {
+              "key": "code",
+              "value": "URFDrZwgjMckBW9fSYKWwxTxKzYwuADMn8M1vhq4exU"
+            },
+            {
+              "key": "client_secret",
+              "value": "{{client_secret}}"
+            },
+            {
+              "key": "redirect_uri",
+              "value": "{{redirect_uri}}"
             }
           ]
         }
